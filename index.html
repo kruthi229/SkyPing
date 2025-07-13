@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkyPing ☁️</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+  <div id="auth-section" class="container">
+  <h2>Welcome to SkyPing ☁️</h2>
+  <input type="email" id="email" placeholder="Email" required />
+  <input type="password" id="password" placeholder="Password" required />
+  <button id="sign-up-btn">Sign Up</button>
+  <button id="login-btn">Log In</button>
+  <button id="logout-btn" style="display:none">Log Out</button>
+  <div id="auth-message" style="margin-top: 10px;"></div>
+</div>
+
+  <div class="container">
+    <h1>SkyPing ☔</h1>
+    <p>Save a location to get smart weather alerts!</p>
+
+    <form id="location-form">
+      <input type="text" id="location_name" placeholder="Location Name (e.g. Home)" required />
+
+      <label style="display: block; margin-top: 10px;">
+        <input type="checkbox" id="use-current-location" />
+        Use my current location
+      </label>
+
+      <input type="text" id="address" placeholder="Enter address (if not using current location)" required />
+
+      <button type="submit">Save Location</button>
+    </form>
+
+    <div id="output" style="margin-top: 15px;"></div>
+   <!-- <h2>Add a Location</h2>
+<form id="location-form">
+  <input type="text" id="location_name" placeholder="Location Name (e.g. Home)" required />
+  <input type="text" id="address" placeholder="Enter address (e.g. Bangalore, India)" />
+  <button type="button" id="use-current">📍 Use Current Location</button>
+  <button type="submit">Save Location</button>  -->
+  <h2>🔍 Quick Weather Check</h2>
+<form id="quick-check-form">
+  <input type="text" id="quick-place" placeholder="Enter place name (e.g. Tokyo)" required />
+  <button type="submit">Check Weather</button>
+</form>
+<div id="quick-output"></div>
+
+</form>
+
+<div id="output"></div>
+
+    <h3 style="margin-top: 30px;">📍 Saved Locations</h3>
+    <ul id="location-list"></ul>
+
+    <h4>☂️ Rain Alert</h4>
+<button id="rain-alert">🔔 Check Rain Alerts</button>
+<div id="alert-output"></div>
+
+
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Auto-disable address input when "use current location" is checked
+    const checkbox = document.getElementById("use-current-location");
+    const addressInput = document.getElementById("address");
+
+    checkbox.addEventListener("change", () => {
+      addressInput.disabled = checkbox.checked;
+      addressInput.required = !checkbox.checked;
+    });
+  </script>
+</body>
+</html>

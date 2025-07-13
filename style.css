@@ -1,0 +1,40 @@
+/*#auth-section input,
+#auth-section button {
+  margin-top: 8px;
+  width: 100%;
+}*/
+
+body {
+  font-family: sans-serif;
+  background: linear-gradient(to bottom, #a2c0f5, #e2eafc);
+  margin: 0;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+}
+
+
+input, button {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
